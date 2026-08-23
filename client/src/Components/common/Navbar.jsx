@@ -35,7 +35,7 @@ const Navbar = () => {
   // Fetch books
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/books");
+      const res = await axios.get("https://booknest-r7wv.onrender.com/api/books");
       setBooks(res.data.data || []);
       setFilteredBooks(res.data.data || []);
     } catch (error) {

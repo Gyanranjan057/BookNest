@@ -4,8 +4,8 @@ import axios from "axios";
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
 
-   const FETCH_URL = "http://localhost:5000/api/orders/all";
-  const BASE_URL = "http://localhost:5000/api/orders";
+   const FETCH_URL = "https://booknest-r7wv.onrender.com/api/orders/all";
+  const BASE_URL = "https://booknest-r7wv.onrender.com/api/orders";
 
   // Fetch All Orders (Admin)
   const fetchOrders = async () => {

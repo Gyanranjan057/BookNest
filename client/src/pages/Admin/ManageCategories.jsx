@@ -13,7 +13,7 @@ const ManageCategories = () => {
   //  ADDED: error state for inline validation
   const [nameError, setNameError] = useState("");
 
-  const API = "http://localhost:5000/api/categories";
+  const API = "https://booknest-r7wv.onrender.com/api/categories";
 
   const fetchCategories = async () => {
     try {

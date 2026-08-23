@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
   // Fetch Cart
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/cart", config);
+      const res = await axios.get("https://booknest-r7wv.onrender.com/api/cart", config);
       setCart(res.data.data);
     } catch (error) {
       console.error("Fetch Cart Error:", error);
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = async (bookId, quantity) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://booknest-r7wv.onrender.com/api/cart/add",
         { bookId, quantity },
         config,
       );
@@ -43,7 +43,7 @@ export const CartProvider = ({ children }) => {
     if (quantity < 1) return;
     try {
       await axios.put(
-        "http://localhost:5000/api/cart/update",
+        "https://booknest-r7wv.onrender.com/api/cart/update",
         { bookId, quantity },
         config
       );
@@ -57,7 +57,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = async (bookId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/cart/remove/${bookId}`,
+        `https://booknest-r7wv.onrender.com/api/cart/remove/${bookId}`,
         config
       );
       fetchCart();

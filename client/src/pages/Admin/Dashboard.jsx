@@ -39,10 +39,10 @@ const Dashboard = () => {
       };
 
       const [booksRes, ordersRes, usersRes, catRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/books"),
-        axios.get("http://localhost:5000/api/orders/all", config),
-        axios.get("http://localhost:5000/api/auth/users", config),
-        axios.get("http://localhost:5000/api/categories"),
+        axios.get("https://booknest-r7wv.onrender.com/api/books"),
+        axios.get("https://booknest-r7wv.onrender.com/api/orders/all", config),
+        axios.get("https://booknest-r7wv.onrender.com/api/auth/users", config),
+        axios.get("https://booknest-r7wv.onrender.com/api/categories"),
       ]);
 
       setBooks(booksRes.data.data);

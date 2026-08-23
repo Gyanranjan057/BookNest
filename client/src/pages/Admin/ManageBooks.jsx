@@ -13,7 +13,7 @@ const ManageBooks = () => {
   const [categories, setCategories] = useState([]);
 
   const fetchCategories = async () => {
-    const res = await axios.get("http://localhost:5000/api/categories");
+    const res = await axios.get("https://booknest-r7wv.onrender.com/api/categories");
     setCategories(res.data.data);
   };
 
@@ -32,7 +32,7 @@ const ManageBooks = () => {
     image: null,
   });
 
-  const API = "http://localhost:5000/api/books";
+  const API = "https://booknest-r7wv.onrender.com/api/books";
 
   const fetchBooks = async () => {
     const res = await axios.get(API);

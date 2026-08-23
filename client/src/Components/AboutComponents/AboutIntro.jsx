@@ -7,7 +7,7 @@ const AboutIntro = () => {
 
       <div data-aos="fade-right">
         <img
-          src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+          src="https://booknest-r7wv.onrender.com/photo-1524995997946-a1c2e315a42f"
           alt="books"
           className="rounded-xl shadow-lg"
         />

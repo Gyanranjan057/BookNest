@@ -13,7 +13,7 @@ const AllBooks = () => {
   // Fetch categories
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/categories");
+      const res = await axios.get("https://booknest-r7wv.onrender.com/api/categories");
       setCategories(res.data.data || []);
     } catch (error) {
       console.error("CATEGORY ERROR:", error.response?.data || error.message);
@@ -24,7 +24,7 @@ const AllBooks = () => {
    // Fetch books
    const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/books");
+      const res = await axios.get("https://booknest-r7wv.onrender.com/api/books");
       setBooks(res.data.data || []);
       setFilteredBooks(res.data.data || []);
     } catch (error) {

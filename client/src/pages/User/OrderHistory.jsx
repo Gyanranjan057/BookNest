@@ -13,7 +13,7 @@ const OrderHistory = () => {
   const fetchOrders = async () => {
     try {
       const res = await axios.get(
-        "srv-da5eqajbc2fs738qle30/api/orders/my-orders",
+        "https://booknest-r7wv.onrender.com/api/orders/my-orders",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setOrders(res.data.data || []);
@@ -27,7 +27,7 @@ const OrderHistory = () => {
   const cancelOrder = async () => {
     try {
       await axios.put(
-        `srv-da5eqajbc2fs738qle30/api/orders/${cancelModalOrderId}/cancel`,
+        `https://booknest-r7wv.onrender.com/api/orders/${cancelModalOrderId}/cancel`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

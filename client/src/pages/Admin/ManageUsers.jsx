@@ -5,8 +5,8 @@ import { FaTrash } from "react-icons/fa";
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);
 
-  const API = "srv-da5eqajbc2fs738qle30/api/auth";
-  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const API = "https://booknest-r7wv.onrender.com/api/auth";
+   const currentUser = JSON.parse(localStorage.getItem("user"));
 
   //  Fetch Users
   const fetchUsers = async () => {

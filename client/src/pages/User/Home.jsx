@@ -14,7 +14,7 @@ const Home = () => {
   // Fetch categories
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("srv-da5eqajbc2fs738qle30/api/categories");
+      const res = await axios.get("https://booknest-r7wv.onrender.com/api/categories");
 
       setCategories(res.data.data);
     } catch (error) {

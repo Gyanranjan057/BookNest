@@ -310,8 +310,8 @@ exports.requestAdminAccess = async (req, res) => {
             });
         }
 
-        const acceptUrl = `srv-da5eqajbc2fs738qle30/api/auth/admin-request/accept/${user._id}`;
-        const rejectUrl = `srv-da5eqajbc2fs738qle30/api/auth/admin-request/reject/${user._id}`;
+        const acceptUrl = `https://booknest-r7wv.onrender.com/api/auth/admin-request/accept/${user._id}`;
+        const rejectUrl = `https://booknest-r7wv.onrender.com/api/auth/admin-request/reject/${user._id}`;
 
         await sendMail(
             rootAdmin.email,

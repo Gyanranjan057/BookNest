@@ -111,7 +111,7 @@ const Navbar = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "srv-da5eqajbc2fs738qle30/api/auth/admin-request",
+        "https://booknest-r7wv.onrender.com/api/auth/admin-request",
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
         const token = localStorage.getItem("token");
 
         const cartRes = await axios.get(
-          "srv-da5eqajbc2fs738qle30/api/cart",
+          "https://booknest-r7wv.onrender.com/api/cart",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -37,7 +37,7 @@ const PaymentSuccess = () => {
          const deliveryDetails = JSON.parse(localStorage.getItem("deliveryDetails") || "{}");
 
         await axios.post(
-          "srv-da5eqajbc2fs738qle30/api/orders",
+          "https://booknest-r7wv.onrender.com/api/orders",
           {
             totalPrice,
             deliveryDetails 

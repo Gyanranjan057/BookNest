@@ -7,7 +7,7 @@ const PaymentFailed = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "srv-da5eqajbc2fs738qle30/api/payment/create-checkout-session",
+        "https://booknest-r7wv.onrender.com/api/payment/create-checkout-session",
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

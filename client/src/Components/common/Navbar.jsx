@@ -128,19 +128,12 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="h-16" />
 
         {/* Desktop Menu */}
-        {/* <ul className="hidden lg:flex space-x-8 text-green-700 font-bold text-xl">
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/books">Books</NavLink></li>
-          <li><NavLink to="/categories">Categories</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-        </ul> */}
-
-
+       
         <ul className="hidden lg:flex space-x-8 text-green-700 font-bold text-xl">
   <li>
     <NavLink to="/" end
       className={({ isActive }) =>
-        `px-3 py-1 rounded-lg transition ${isActive ? "bg-amber-950 text-white" : ""}`
+        `px-3 py-1 rounded-lg transition ${isActive ? "bg-teal-600 text-white" : ""}`
       }
     >
       Home
@@ -149,7 +142,7 @@ const Navbar = () => {
   <li>
     <NavLink to="/books"
       className={({ isActive }) =>
-        `px-3 py-1 rounded-lg transition ${isActive ? "bg-amber-950 text-white" : ""}`
+        `px-3 py-1 rounded-lg transition ${isActive ? "bg-teal-600 text-white" : ""}`
       }
     >
       Books
@@ -158,7 +151,7 @@ const Navbar = () => {
   <li>
     <NavLink to="/categories"
       className={({ isActive }) =>
-        `px-3 py-1 rounded-lg transition ${isActive ? "bg-amber-950 text-white" : ""}`
+        `px-3 py-1 rounded-lg transition ${isActive ? "bg-teal-600 text-white" : ""}`
       }
     >
       Categories
@@ -167,7 +160,7 @@ const Navbar = () => {
   <li>
     <NavLink to="/about"
       className={({ isActive }) =>
-        `px-3 py-1 rounded-lg transition ${isActive ? "bg-amber-950 text-white" : ""}`
+        `px-3 py-1 rounded-lg transition ${isActive ? "bg-teal-600 text-white" : ""}`
       }
     >
       About
@@ -331,13 +324,13 @@ const Navbar = () => {
               )}
 
               <NavLink to="/" end onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => isActive ? "text-green-600 font-bold" : ""}>Home</NavLink>
+                className={({ isActive }) => isActive ? "text-teal-600 font-bold" : ""}>Home</NavLink>
               <NavLink to="/books" onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => isActive ? "text-green-600 font-bold" : ""}>Books</NavLink>
+                className={({ isActive }) => isActive ? "text-teal-600 font-bold" : ""}>Books</NavLink>
               <NavLink to="/categories" onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => isActive ? "text-green-600 font-bold" : ""}>Categories</NavLink>
+                className={({ isActive }) => isActive ? "text-teal-600 font-bold" : ""}>Categories</NavLink>
               <NavLink to="/about" onClick={() => setMenuOpen(false)}
-                className={({ isActive }) => isActive ? "text-green-600 font-bold" : ""}>About</NavLink>
+                className={({ isActive }) => isActive ? "text-teal-600 font-bold" : ""}>About</NavLink>
 
               {user?.role === "user" && (
                 <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart</Link>

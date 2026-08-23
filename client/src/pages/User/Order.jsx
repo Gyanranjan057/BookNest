@@ -31,7 +31,7 @@ const Order = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/payment/create-checkout-session",
+        "srv-da5eqajbc2fs738qle30/api/payment/create-checkout-session",
         {},
         {
           headers: {

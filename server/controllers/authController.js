@@ -310,8 +310,8 @@ exports.requestAdminAccess = async (req, res) => {
             });
         }
 
-        const acceptUrl = `http://localhost:5000/api/auth/admin-request/accept/${user._id}`;
-        const rejectUrl = `http://localhost:5000/api/auth/admin-request/reject/${user._id}`;
+        const acceptUrl = `srv-da5eqajbc2fs738qle30/api/auth/admin-request/accept/${user._id}`;
+        const rejectUrl = `srv-da5eqajbc2fs738qle30/api/auth/admin-request/reject/${user._id}`;
 
         await sendMail(
             rootAdmin.email,

@@ -13,7 +13,7 @@ const OrderHistory = () => {
   const fetchOrders = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/orders/my-orders",
+        "srv-da5eqajbc2fs738qle30/api/orders/my-orders",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setOrders(res.data.data || []);
@@ -27,7 +27,7 @@ const OrderHistory = () => {
   const cancelOrder = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/orders/${cancelModalOrderId}/cancel`,
+        `srv-da5eqajbc2fs738qle30/api/orders/${cancelModalOrderId}/cancel`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

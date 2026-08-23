@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
         const token = localStorage.getItem("token");
 
         const cartRes = await axios.get(
-          "http://localhost:5000/api/cart",
+          "srv-da5eqajbc2fs738qle30/api/cart",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -37,7 +37,7 @@ const PaymentSuccess = () => {
          const deliveryDetails = JSON.parse(localStorage.getItem("deliveryDetails") || "{}");
 
         await axios.post(
-          "http://localhost:5000/api/orders",
+          "srv-da5eqajbc2fs738qle30/api/orders",
           {
             totalPrice,
             deliveryDetails 

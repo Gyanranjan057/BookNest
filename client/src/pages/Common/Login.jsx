@@ -28,7 +28,7 @@ const Login = ({ isOpen, onClose }) => {
     e.preventDefault();
     try {
       if (isLogin) {
-        const res = await axios.post("http://localhost:5000/api/auth/login", {
+        const res = await axios.post("srv-da5eqajbc2fs738qle30/api/auth/login", {
           email: formData.email,
           password: formData.password,
         });
@@ -37,7 +37,7 @@ const Login = ({ isOpen, onClose }) => {
         onClose();
         window.location.reload();
       } else {
-        await axios.post("http://localhost:5000/api/auth/register", formData);
+        await axios.post("srv-da5eqajbc2fs738qle30/api/auth/register", formData);
         setIsLogin(true);
         setFormData({ name: "", email: "", password: "" });
       }
@@ -51,7 +51,7 @@ const Login = ({ isOpen, onClose }) => {
   const handleSendOtp = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/forgot-password/send-otp", { email: forgotEmail });
+      const res = await axios.post("srv-da5eqajbc2fs738qle30/api/auth/forgot-password/send-otp", { email: forgotEmail });
       setForgotMessage(res.data.message);
       setForgotStep(2);
     } catch (error) {
@@ -62,7 +62,7 @@ const Login = ({ isOpen, onClose }) => {
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/forgot-password/verify-otp", { email: forgotEmail, otp: forgotOtp });
+      const res = await axios.post("srv-da5eqajbc2fs738qle30/api/auth/forgot-password/verify-otp", { email: forgotEmail, otp: forgotOtp });
       setForgotMessage(res.data.message);
       setForgotStep(3);
     } catch (error) {
@@ -73,7 +73,7 @@ const Login = ({ isOpen, onClose }) => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/forgot-password/reset-password", { email: forgotEmail, otp: forgotOtp, newPassword });
+      const res = await axios.post("srv-da5eqajbc2fs738qle30/api/auth/forgot-password/reset-password", { email: forgotEmail, otp: forgotOtp, newPassword });
       setForgotMessage(res.data.message);
       setTimeout(() => {
         setIsForgot(false);

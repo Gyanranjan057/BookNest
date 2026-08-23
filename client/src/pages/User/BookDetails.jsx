@@ -20,11 +20,11 @@ const BookDetails = () => {
       try {
         setLoading(true);
 
-        const res = await axios.get(`http://localhost:5000/api/books/${id}`);
+        const res = await axios.get(`srv-da5eqajbc2fs738qle30/api/books/${id}`);
         const currentBook = res.data.data;
         setBook(currentBook);
 
-        const allBooksRes = await axios.get("http://localhost:5000/api/books");
+        const allBooksRes = await axios.get("srv-da5eqajbc2fs738qle30/api/books");
         const allBooks = allBooksRes.data.data;
 
         const related = allBooks.filter(

@@ -10,7 +10,8 @@ export const CartProvider = ({ children }) => {
 
   const config = {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+      // Authorization: `Bearer ${token}`,
     },
   };
 

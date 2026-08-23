@@ -90,9 +90,6 @@ const ManageUsers = () => {
               <div>
                 <h2 className="font-semibold">{user.name}</h2>
                 <p className="text-xs text-gray-500">{user.email}</p>
-                {user.isRootAdmin && (
-                  <span className="text-xs text-green-600 font-bold">Root Admin</span>
-                )}
               </div>
             </div>
 

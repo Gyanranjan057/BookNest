@@ -25,8 +25,8 @@ exports.createCheckoutSession = async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "https://booknest-c.onrender.com/payment-success",
-      cancel_url: "https://booknest-c.onrender.com/payment-failed",
+      success_url: "https://booknest.devs.surf/payment-success",
+      cancel_url: "hhttps://booknest.devs.surf/payment-failed",
       metadata: { userId: req.user.id.toString() },
     });
 

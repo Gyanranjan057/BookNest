@@ -26,12 +26,6 @@ const PaymentFailed = () => {
       <p className="text-gray-600 mb-6">
         Something went wrong with your payment. Please try again.
       </p>
-      <button
-        onClick={handleTryAgain}
-        className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition cursor-pointer"
-      >
-        Try Again
-      </button>
     </section>
   );
 };

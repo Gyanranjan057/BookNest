@@ -1,28 +1,25 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { Resend } = require("resend");
-
+const nodemailer = require("nodemailer");
 // ================= RESEND API =================
 const sendMail = async (to, subject, html) => {
-    const response = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
-            "Content-Type": "application/json",
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
         },
-        body: JSON.stringify({
-            from: "onboarding@resend.dev",
-            to,
-            subject,
-            html,
-        }),
     });
-    if (!response.ok) {
-        throw new Error("Email send failed");
-    }
+    await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to,
+        subject,
+        html,
+    });
 };
-
 // ================= REGISTER =================
 exports.registerUser = async (req, res) => {
     try {

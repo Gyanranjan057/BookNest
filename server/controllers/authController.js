@@ -1,24 +1,27 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const nodemailer = require("nodemailer");
-// ================= RESEND API =================
-const sendMail = async (to, subject, html) => {
-    const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+ // ================= RESEND API =================
+ const sendMail = async (to, subject, html) => {
+    const auth = Buffer.from(`${process.env.MAILJET_API_KEY}:${process.env.MAILJET_SECRET_KEY}`).toString("base64");
+    const response = await fetch("https://api.mailjet.com/v3.1/send", {
+        method: "POST",
+        headers: {
+            "Authorization": `Basic ${auth}`,
+            "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+            Messages: [{
+                From: { Email: "ggyan057@gmail.com", Name: "Booknest" },
+                To: [{ Email: to }],
+                Subject: subject,
+                HTMLPart: html,
+            }],
+        }),
     });
-    await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to,
-        subject,
-        html,
-    });
+    if (!response.ok) {
+        throw new Error("Email send failed");
+    }
 };
 // ================= REGISTER =================
 exports.registerUser = async (req, res) => {

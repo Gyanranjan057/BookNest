@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
- // ================= RESEND API =================
+ // ================= MAILJET API =================
  const sendMail = async (to, subject, html) => {
     const auth = Buffer.from(`${process.env.MAILJET_API_KEY}:${process.env.MAILJET_SECRET_KEY}`).toString("base64");
     const response = await fetch("https://api.mailjet.com/v3.1/send", {
@@ -318,7 +318,7 @@ exports.requestAdminAccess = async (req, res) => {
 
         await sendMail(
             rootAdmin.email,
-            "Book HUB - Admin Access Request",
+            "Book NEST - Admin Access Request",
             `
             <h2>Admin Access Request</h2>
             <p><b>${user.name}</b> (${user.email}) has requested admin access.</p>
@@ -357,7 +357,7 @@ exports.acceptAdminRequest = async (req, res) => {
 
         await sendMail(
             user.email,
-            "Book HUB - Admin Access Accepted",
+            "Book NEST - Admin Access Accepted",
             `
             <h2>Congratulations ${user.name}!</h2>
             <p>Your admin access request has been accepted.</p>
@@ -389,7 +389,7 @@ exports.rejectAdminRequest = async (req, res) => {
 
         await sendMail(
             user.email,
-            "Book HUB - Admin Access Rejected",
+            "Book NEST - Admin Access Rejected",
             `
             <h2>Hello ${user.name},</h2>
             <p>Your admin access request has been rejected.</p>
@@ -426,7 +426,7 @@ exports.sendOtp = async (req, res) => {
 
         await sendMail(
             email,
-            "Book HUB - Password Reset OTP",
+            "Book NEST - Password Reset OTP",
             `<h2>Your OTP is: <b>${otp}</b></h2><p>Valid for 10 minutes.</p>`
         );
 

@@ -12,7 +12,7 @@ const jwt = require("jsonwebtoken");
         },
         body: JSON.stringify({
             Messages: [{
-                From: { Email: "ggyan057@gmail.com", Name: "Booknest" },
+                From: { Email: "ggyan057@gmail.com", Name: "BookNest" },
                 To: [{ Email: to }],
                 Subject: subject,
                 HTMLPart: html,
